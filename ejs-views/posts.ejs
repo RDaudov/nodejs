@@ -17,7 +17,7 @@
                             <h2><a href="/posts/<%= id %>"><%= title %></a></h2>
                             <p><%= text %></p>
                             <span><%= date %></span>
-                            <button data-id="id">X</button>
+                            <button data-id="<%= id %>">X</button>
                         </li>
                     <% }) %>
                 <% } %>
@@ -29,6 +29,11 @@
         <script>
             document.addEventListener('click', (e) => {
                 const id = e.target?.dataset?.id || null
+                if(id) {
+                    fetch(`/posts/${id}`, {
+                        method: 'DELETE',
+                    })
+                }
             })
         </script>
 	</body>

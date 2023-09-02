@@ -49,6 +49,18 @@ app.get("/posts/:id", (req, res) => {
 			res.render(createPath('error'), { title })
 		})
 });
+app.delete("/posts/:id", (req, res) => {
+	const title = "Post";
+	Post
+		.findByIdAndDelete(req.params.id)
+		.then(result => { 
+			res.sendStatus(200);
+		})
+		.catch((error) => {
+			console.log(error);
+			res.render(createPath('error'), { title })
+		})
+});
 app.get("/posts", (req, res) => {
 	const title = "Posts";
 	Post
