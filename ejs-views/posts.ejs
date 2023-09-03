@@ -32,6 +32,8 @@
                 if(id) {
                     fetch(`/posts/${id}`, {
                         method: 'DELETE',
+                    }).then(() => {
+                        window.location.reload()
                     })
                 }
             })
