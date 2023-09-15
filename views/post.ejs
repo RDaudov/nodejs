@@ -16,7 +16,7 @@
 				<span class="post__item date"><%= post.date || 'no date' %></span>
 				<div class="edit_btn">
 					<a class="edit" href="/edit/<%= post.id %>"><i class="fas fa-pencil" aria-hidden="true"></i></a>
-					<button data-id="<%= post.id %>"><i class="fas fa-remove" aria-hidden="true"></i></button>
+					<button data-id="<%= post.id %>"><i class="fas fa-remove" aria-hidden="true" data-id="<%= post.id %>"></i></button>
 				</div>
 			</article>
       	</main>
