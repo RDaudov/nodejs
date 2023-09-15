@@ -23,7 +23,7 @@ app.use(methodOverride('_method'))
 app.use(postRouter)
 app.use(postApiRoutes)
 
-app.listen(process.env.postRouter);
+app.listen(process.env.PORT);
 
 app.get("/", (req, res) => {
 	const title = "Home";
