@@ -7,7 +7,9 @@ const {
 	editPost,
 	deletePost,
 	getAddPost,
-	addPost
+	addPost,
+	getSearchPost,
+	searchPost
 
 } = require('../controllers/post-controller')
 
@@ -24,5 +26,10 @@ router.delete("/posts/:id", deletePost);
 router.post("/add-post", addPost)
 
 router.get("/add-post", getAddPost)
+
+router.get("/search", getSearchPost)
+
+router.post("/search", searchPost)
+
 
 module.exports = router;

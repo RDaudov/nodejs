@@ -1,5 +1,6 @@
 const Post = require('../models/post')
-const createPath = require('../helpers/create-path')
+const createPath = require('../helpers/create-path');
+const { post } = require('../routes/post-routes');
 
 const handleError = (res, error) => {
 	console.log(error)
@@ -64,8 +65,17 @@ const addPost = (req, res) => {
 		)
 }
 
+const getSearchPost = (req, res) => {
+	const title = "Search";
+	res.render(createPath("search"), { title });
+}
 
-
+const searchPost = (req, res) => {
+	const { title, text } = req.body;
+	Post
+.find({title: text} )
+	.then((posts) => res.render(createPath("posts"), { title, posts }))
+}
 
 
 
@@ -76,5 +86,7 @@ module.exports = {
 	editPost,
 	deletePost,
 	getAddPost,
-	addPost
+	addPost,
+	getSearchPost,
+	searchPost
 }

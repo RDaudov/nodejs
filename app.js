@@ -1,7 +1,7 @@
 const http  = require('http')
 const fs = require('fs')
-const path = require('path')
-const PORT = 3000;
+const path = require('path');
+const PORT = 3001;
 const createPath = (page) => path.resolve(`${page}.html`)
 let basePath = ''
 
@@ -20,7 +20,6 @@ const server = http.createServer((req, res) => {
             basePath = createPath('error');
             break
     }
-    
     
         fs.readFile(basePath, (err, data) => {
             if (err) {
